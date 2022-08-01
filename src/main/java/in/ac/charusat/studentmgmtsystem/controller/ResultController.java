@@ -14,14 +14,14 @@ public class ResultController {
     @Autowired
     ResultRepository resultRepository;
 
-    @PostMapping("/student/resultAdd")
-    public List<Result> addStudent(@RequestBody Result result) {
-        resultRepository.save(result);
+    @GetMapping("/student/result")
+    public List<Result> getAllStudents() {
         return resultRepository.findAll();
     }
 
-    @GetMapping("/student/result")
-    public List<Result> getAllStudents() {
+    @PostMapping("/student/resultAdd")
+    public List<Result> addStudent(@RequestBody Result result) {
+        resultRepository.save(result);
         return resultRepository.findAll();
     }
 
